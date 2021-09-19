@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Home{% endblock title %}
+
+{% block content %}
+
+<!-- Search Form -->
+<!-- form_lebal -->
+      <section>
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <form class="form_book">
+                     <div class="row ">
+                        <div class="col-md-4 mb-2">
+                           <label class="date">KEYWORDS</label>
+                           <input class="book_n" placeholder="Keyword (Pool, Garage, etc)" type="text" name="keywords">
+                        </div>
+                        <div class="col-md-4">
+                           <label class="date">CITY</label>
+                           <input class="book_n" placeholder="City" type="text" name="City">
+                        </div>
+                        <div class="col-md-4">
+                           <label class="date">STATE</label>
+                           <select class=" book_n" name="state">
+                              <option selected disabled>State (All)</option>
+                              <option value="Maharashtra">Maharashtra</option>
+                              <option value="Goa">Goa</option>
+                           </select>
+                        </div>
+                         
+                       
+                     </div>
+                     <div class="row">
+                        <div class="col-md-4">
+                           <label class="date">BEDROOMS</label>
+                           <select  class=" book_n" name="bedroom">
+                              <option selected disabled>No. of Bedrooms</option>
+                              <option value="5">Five</option>
+                              <option value="4">Four</option>
+                           </select>
+                        </div>
+                        <div class="col-md-4">
+                           <label class="date">MAX PRICE</label>
+                           <select  class=" book_n" name="bedroom">
+                              <option selected disabled>Max Price(Any)</option>
+                              <option value="5">50K</option>
+                              <option value="4">40K</option>
+                           </select>
+                        </div>
+                        <div class="col-md-4">
+                           <button class="book_btn">Book Now</button>
+                        </div>
+                     </div>
+                  </form>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!-- end form_lebal -->
+
+{% endblock content %}

@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Register{% endblock title %}
+
+{% block content %}
+
+    <div class="choose">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-6">
+                  <div class="choose_box">
+                    <div class="titlepage">
+                        <h2><span class="text_norlam">USER</span> 
+                        <br>REGISTERATION</h2>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+
+                    <form id="request" method="POST" action = "{% url 'register' %}" class="main_form">
+                    {% csrf_token %}
+                        <div class="row">
+                           <div class="col-md-12">
+                            <!-- Alerts -->
+                           {% include 'partials/_alert.html' %}
+                           </div>
+                           <div class="col-md-12 ">
+                              <input class="contactus" placeholder="First Name" type="text" name="first_name"> 
+                           </div>
+                           <div class="col-md-12 ">
+                              <input class="contactus" placeholder="Last Name" type="text" name="last_name"> 
+                           </div>
+                           <div class="col-md-12 ">
+                              <input class="contactus" placeholder="User Name" type="text" name="username"> 
+                           </div>
+                           <div class="col-md-12">
+                              <input class="contactus" placeholder="Email" type="email" name="email"> 
+                           </div>
+                           <div class="col-md-12">
+                              <input class="contactus" placeholder="Password" type="password" name="password"> 
+                           </div>
+                           <div class="col-md-12">
+                              <input class="contactus" placeholder="Confirm Password" type="password" name="password2"> 
+                           </div>
+                           
+                           <div class="col-sm-12">
+                              <button type="submit" name="submit" class="send_btn">Register</button>
+                           </div>
+                        </div>
+                     </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}
