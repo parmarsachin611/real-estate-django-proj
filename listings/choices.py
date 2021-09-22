@@ -1,0 +1,58 @@
+bedroom_choices = {
+  '1':1,
+  '2':2,
+  '3':3,
+  '4':4,
+  '5':5,
+  '6':6,
+  '7':7,
+  '8':8,
+  '9':9,
+  '10':10
+  }
+
+price_choices = {
+  '100000':'Rs. 1,00,000',
+  '200000':'Rs. 2,00,000',
+  '300000':'Rs. 3,00,000',
+  '400000':'Rs. 4,00,000',
+  '500000':'Rs. 5,00,000',
+  '600000':'Rs. 6,00,000',
+  '700000':'Rs. 7,00,000',
+  '800000':'Rs. 8,00,000',
+  '900000':'Rs. 9,00,000',
+  '1000000':'Rs. 1Lakh+',
+}
+
+state_choices = {
+         'AP': 'Andhra Pradesh',
+        'AR': 'Arunachal Pradesh', 
+        'AS': 'Assam',
+        'BR': 'Bihar',
+        'CH': 'Chhattisgarh',
+        'GA': 'Goa',
+        'GJ': 'Gujarat',
+        'HR': 'Haryana',
+        'HP': 'Himachal Pradesh',
+        'JK': 'Jammu and Kashmir ',
+        'JR': 'Jharkhand',
+        'KN': 'Karnataka',
+        'KR': 'Kerala',
+        'MP': 'Madhya Pradesh',
+        'MH': 'Maharashtra',
+        'MN': 'Manipur',
+        'MG': 'Meghalaya',
+        'MZ': 'Mizoram',
+        'NG': 'Nagaland',
+        'OD': 'Odisha',
+        'PN': 'Punjab',
+        'RJ': 'Rajasthan',
+        'SK': 'Sikkim',
+        'TN': 'Tamil Nadu',
+        'TG': 'Telangana',
+        'TR': 'Tripura',
+        'UP': 'Uttar Pradesh',
+        'UL': 'Uttarakhand',
+        'WB': 'West Bengal',
+        'DL': 'National Capital Territory of Delhi'
+}

@@ -12,7 +12,7 @@
          <div class="container">
             <div class="row">
                <div class="col-md-12">
-                  <form class="form_book">
+                  <form class="form_book"  method="POST" action="{% url 'search' %}">
                      <div class="row ">
                         <div class="col-md-4 mb-2">
                            <label class="date">KEYWORDS</label>
@@ -20,14 +20,15 @@
                         </div>
                         <div class="col-md-4">
                            <label class="date">CITY</label>
-                           <input class="book_n" placeholder="City" type="text" name="City">
+                           <input class="book_n" placeholder="City" type="text" name="city">
                         </div>
                         <div class="col-md-4">
                            <label class="date">STATE</label>
                            <select class=" book_n" name="state">
                               <option selected disabled>State (All)</option>
-                              <option value="Maharashtra">Maharashtra</option>
-                              <option value="Goa">Goa</option>
+                              {% for key,value in state_choices.items %}
+                                 <option value="{{ key }}">{{ value }}</option>
+                              {% endfor %}
                            </select>
                         </div>
                          
@@ -36,22 +37,24 @@
                      <div class="row">
                         <div class="col-md-4">
                            <label class="date">BEDROOMS</label>
-                           <select  class=" book_n" name="bedroom">
+                           <select  class=" book_n" name="bedrooms">
                               <option selected disabled>No. of Bedrooms</option>
-                              <option value="5">Five</option>
-                              <option value="4">Four</option>
+                              {% for key,value in bedroom_choices.items %}
+                                 <option value="{{ key }}">{{ value }}</option>
+                              {% endfor %}
                            </select>
                         </div>
                         <div class="col-md-4">
                            <label class="date">MAX PRICE</label>
-                           <select  class=" book_n" name="bedroom">
+                           <select  class=" book_n" name="price">
                               <option selected disabled>Max Price(Any)</option>
-                              <option value="5">50K</option>
-                              <option value="4">40K</option>
+                              {% for key,value in price_choices.items %}
+                                 <option value="{{ key }}">{{ value }}</option>
+                              {% endfor %}
                            </select>
                         </div>
                         <div class="col-md-4">
-                           <button class="book_btn">Book Now</button>
+                           <button class="book_btn" name="submit">Book Now</button>
                         </div>
                      </div>
                   </form>
