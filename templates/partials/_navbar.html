@@ -26,10 +26,10 @@
                                  <a class="nav-link" href="{% url 'index' %}">HOME</a>
                               </li>
                               <li class="nav-item">
-                                 <a class="nav-link" href="">ABOUT US</a>
+                                 <a class="nav-link" href="{% url 'about' %}">ABOUT US</a>
                               </li>
                               <li class="nav-item">
-                                 <a class="nav-link" href="#">FEATURED LISTING</a>
+                                 <a class="nav-link" href="{% url 'listings' %}">FEATURED LISTING</a>
                               </li>
                            
                            {% if user.is_authenticated %}

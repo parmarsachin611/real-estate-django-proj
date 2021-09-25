@@ -445,7 +445,7 @@ button {
     border: inherit;
     border-radius: 20px;
     background-color: #eeeeee;
-    width: 100%;
+    width: 90%;
     font-size: 16px;
     height: auto;
     line-height: normal;
@@ -473,7 +473,7 @@ button {
      background-color: #eec237;
      color: #fff;
      transition: ease-in all 0.5s;
-     border-radius: 25px
+     border-radius: 25px;
 }
 
 
@@ -717,6 +717,37 @@ button {
 
 /** end testimonial section **/
 
+/* Search */
+.search_text h4{
+     font-size: 17px;
+     color: #313131;
+     line-height: 18px;
+     display: block;
+     text-align: center;
+     font-weight: 600;
+     padding: 0;
+    
+}
+.search_a{
+     font-size: 17px;
+     background-color: #000;
+     color: #fff;
+     font-weight: 500;
+     padding: 5px 0px;
+     width: 100%;
+     text-align: center;
+     display: inline-block;
+     transition: ease-in all 0.5s;
+     border-radius: 10px;
+     cursor: pointer;
+}
+
+.search_a:hover{
+     background-color: #eec237;
+     color: #fff;
+     transition: ease-in all 0.5s;
+     border-radius: 25px;
+}
 
 /** footer **/
 

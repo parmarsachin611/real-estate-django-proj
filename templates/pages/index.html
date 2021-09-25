@@ -2,7 +2,17 @@
 
 {% load static %}
 
+{% load humanize %}
+
 {% block title %}Home{% endblock title %}
+
+{% block heading %}
+
+<h1>WELCOME TO Felicity Real Estate!!!</h1>
+<span>Property Searching Just Got So easy</span>
+<a href="{% url 'about' %}">Read More</a>
+
+{% endblock heading %}
 
 {% block content %}
 
@@ -12,7 +22,7 @@
          <div class="container">
             <div class="row">
                <div class="col-md-12">
-                  <form class="form_book"  method="POST" action="{% url 'search' %}">
+                  <form class="form_book" action="{% url 'search' %}">
                      <div class="row ">
                         <div class="col-md-4 mb-2">
                            <label class="date">KEYWORDS</label>

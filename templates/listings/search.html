@@ -1,0 +1,151 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% load humanize %}
+
+{% block title %}Search{% endblock title %}
+
+{% block heading %}
+
+<h1>Search</h1>
+<span>Property Searching Just Got So easy</span>
+<a href="{% url 'about' %}">Read More</a>
+
+{% endblock heading %}
+
+{% block content %}
+
+    <!-- Search Form -->
+<!-- form_lebal -->
+      <section>
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <form class="form_book" action="{% url 'search' %}">
+                     <div class="row ">
+                        <div class="col-md-4 mb-2">
+                           <label class="date">KEYWORDS</label>
+                           <input class="book_n" placeholder="Keyword (Pool, Garage, etc)" type="text" name="keywords" value="{{ values.keywords }}">
+                        </div>
+                        <div class="col-md-4">
+                           <label class="date">CITY</label>
+                           <input class="book_n" placeholder="City" type="text" name="city" value="{{ values.city }}">
+                        </div>
+                        <div class="col-md-4">
+                           <label class="date">STATE</label>
+                           <select class=" book_n" name="state">
+                              <option selected disabled>State (All)</option>
+                              {% for key,value in state_choices.items %}
+                                 <option value="{{ key }}" 
+                                    {% if key == values.state %}
+                                        selected
+                                    {% endif %}
+                                    >{{ value }}
+                                    </option>
+                              {% endfor %}
+                           </select>
+                        </div>
+                         
+                       
+                     </div>
+                     <div class="row">
+                        <div class="col-md-4">
+                           <label class="date">BEDROOMS</label>
+                           <select  class=" book_n" name="bedrooms">
+                              <option selected disabled>No. of Bedrooms</option>
+                              {% for key,value in bedroom_choices.items %}
+                                 <option value="{{ key }}"
+                                    {% if key == values.bedrooms %}
+                                        selected
+                                    {% endif %}
+                                    >{{ value }}
+                                    </option>
+                              {% endfor %}
+                           </select>
+                        </div>
+                        <div class="col-md-4">
+                           <label class="date">MAX PRICE</label>
+                           <select  class=" book_n" name="price">
+                              <option selected disabled>Max Price(Any)</option>
+                              {% for key,value in price_choices.items %}
+                                 <option value="{{ key }}"
+                                    {% if key == values.price %}
+                                        selected
+                                    {% endif %}
+                                    >{{ value }}</option>
+                              {% endfor %}
+                           </select>
+                        </div>
+                        <div class="col-md-4">
+                           <button class="book_btn" name="submit">Book Now</button>
+                        </div>
+                     </div>
+                  </form>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!-- end form_lebal -->
+
+ 
+
+  <section class="py-4">
+    <div class="container">
+      <div class="row">
+        {% if listings %}
+          {% for listing in listings %}
+          <div class="col-md-6 col-lg-4 mb-4">
+              <div class="card listing-preview">
+                <img class="card-img-top" src="{{ listing.photo_main.url }}" alt="">
+                <div class="card-img-overlay">
+                  <h2>
+                    <span class="badge badge-secondary text-white">&#x20B9;{{ listing.price | intcomma }}</span>
+                  </h2>
+                </div>
+                <div class="card-body">
+                  <div class=" search_text text-center">
+                    <h4 >{{ listing.title }}</h4>
+                    <p>
+                      <i class="fas fa-map-marker text-secondary"></i> {{ listing.city }} {{ listing.state }}, {{ listing.zipcode }}</p>
+                  </div>
+                  <hr>
+                  <div class="row py-2 text-secondary">
+                    <div class="col-6">
+                      <i class="fas fa-th-large"></i> Sqft: {{ listing.sqft }}</div>
+                    <div class="col-6">
+                      <i class="fas fa-car"></i> Garage: {{ listing.garage }}</div>
+                  </div>
+                  <div class="row py-2 text-secondary">
+                    <div class="col-6">
+                      <i class="fas fa-bed"></i> Bedrooms: {{ listing.bedrooms }}</div>
+                    <div class="col-6">
+                      <i class="fas fa-bath"></i> Bathrooms: {{ listing.bathrooms }}</div>
+                  </div>
+                  <hr>
+                  <div class="row py-2 text-secondary">
+                    <div class="col-12">
+                      <i class="fas fa-user"></i> {{ listing.realtor }}</div>
+                  </div>
+                  <div class="row text-secondary pb-2">
+                    <div class="col-6">
+                      <i class="fas fa-clock"></i> {{ listing.list_date | timesince }}</div>
+                  </div>
+                  <hr>
+                  
+                  <a href="{% url 'listing' listing.id %}" class="search_a">More Info</a>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        {% else %}
+          <div class="col-md-12">
+            <p>No Listings Available</p>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </section>
+
+
+{% endblock content %}
